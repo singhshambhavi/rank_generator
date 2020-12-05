@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Home Page</title>
+    <style>
+        body {
+            background-image: url('https://cdn.mos.cms.futurecdn.net/Tw4oCiJrKzJLgHrwMHuRHf.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        nav{
+            font-size: 30px;
+        }
+        a{
+            color: black;
+        }
+    </style>
+    <style>
+        label {
+            display: inline-block;
+            width:100px;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:singh.shambhavi228@gmail.com">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container" align="center">
+        <h2 class="display-4">Home</h2>
+        <hr class="my-4">
+        <h3>Please enter your details</h3>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            {% if form.errors %}
+            <!-- Error messaging -->
+            <div id="errors">
+                <div class="inner">
+                    <p>There were some errors in the information you entered. Please correct the following:</p>
+                    <ul>
+                        {% for field in form %}
+                        {% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- /Error messaging -->
+            {% endif %}
+            <div class="form-group">
+                <label for="name"><b>Name:</b></label>
+                {{ form.name }}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="uuid"><b>UUID:</b></label>
+                {{ form.uuid }}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="topic"><b>Topic:</b></label>
+                {{ form.topic}}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="score"><b>Score:</b></label>
+                {{ form.score }}
+            </div>
+            <br>
+            <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Submit">
+        </div>
+    </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Ranking Page</title>
+    <style>
+        body {
+            background-image: url('https://cdn.mos.cms.futurecdn.net/Tw4oCiJrKzJLgHrwMHuRHf.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    
+        h3 {
+            display: block;
+            padding: 20px;
+        }
+
+        nav{
+            font-size: 30px;
+        }
+        a{
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/v1/userdetails/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:singh.shambhavi228@gmail.com">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container" align="center">
+        <h3 class="display-4">Ranking</h3>
+        <hr class="my-4">
+        {% for x in rank %}
+        {% for y in name %}
+        <h5>Hey, {{ y.name }} your ranking is: {{ x.rank }}</h5>
+        {% endfor %}
+        {% endfor %}
+    </div>
+</body>
+
+</html>
