@@ -26,7 +26,7 @@ SECRET_KEY = '^r!(+=$d)zios)7f(ulovqil9=p+vdh6hkb=++5zztdyuu0kdq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*","rankgenerator.herokuapp.com"]
 
 
 # Application definition
