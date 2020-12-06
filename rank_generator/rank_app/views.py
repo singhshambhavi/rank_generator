@@ -33,5 +33,5 @@ def DetailView(request):
         #return render(request, "display.html",{"rank": rank})
     #else:
         #print("ERROR FROM INVALID")
-    return render(request, "checkrank.html")
+    #return render(request, "checkrank.html")
     
