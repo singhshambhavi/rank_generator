@@ -19,5 +19,5 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r"v1/", include(("rank_app.urls", "rank_app"), namespace="v1")),
+    path("", include(("rank_app.urls", "rank_app"), namespace="v1")),
 ]

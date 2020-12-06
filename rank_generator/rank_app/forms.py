@@ -8,8 +8,8 @@ class PostForm(forms.ModelForm):
         fields = ('name', 'uuid', 'topic', 'score')
 
         widgets ={
-            'name':forms.TextInput(attrs={ 'placeholder': 'Enter Name','required': True, 'size': 20}),
+            'name':forms.TextInput(attrs={ 'placeholder': 'Enter Name','required': True, 'size': 20, 'pattern':'[A-Za-z ]'}),
             'uuid':forms.NumberInput(attrs={ 'placeholder': 'Enter UUID', 'maxlength': 10000, 'required': True, 'size': 20}),
-            'topic':forms.TextInput(attrs={ 'placeholder': 'Enter Topic','required': True, 'size': 20}),
+            'topic':forms.TextInput(attrs={ 'placeholder': 'Enter Topic','required': True, 'size': 20, 'pattern':'[A-Za-z ]'}),
             'score':forms.NumberInput(attrs={ 'placeholder': 'Enter Score', 'maxlength': 100, 'required': True, 'size': 20}),
        }
