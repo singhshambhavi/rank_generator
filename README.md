@@ -1,5 +1,7 @@
 # rank_generator
-This project is made using Django Rest Framework.
+This project is made using Django Rest Framework. Here we are calculating the ranking of people based on there score.
+
+
 
 # Requirements
 -  Python 3.8.5
